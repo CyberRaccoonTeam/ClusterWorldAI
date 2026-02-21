@@ -34,7 +34,7 @@
  2) Install dependencies
 
  ```bash
- pip install -r Models/S.E.T.H/configuration/requirements.txt
+ pip install -r Models/ClusterWorldAI/configuration/requirements.txt
  ```
 
  3) (Optional) Pull an Ollama model (example: `qwen2.5:7b`)
@@ -47,15 +47,15 @@
  4) Run a single sandbox cycle (test)
 
  ```bash
- cd Models/S.E.T.H
+ cd Models/ClusterWorldAI
  python core/autonomous_loop.py --mode sandbox --interval 1 --cycles 1
  ```
 
  5) Check logs and outputs
 
- - Thoughts: Models/S.E.T.H/logs/thoughts.txt
- - Actions: Models/S.E.T.H/logs/actions.log
- - Monitor (God View snapshot): Models/S.E.T.H/data/monitor_state.json
+ - Thoughts: Models/ClusterWorldAI/logs/thoughts.txt
+ - Actions: Models/ClusterWorldAI/logs/actions.log
+ - Monitor (God View snapshot): Models/ClusterWorldAI/data/monitor_state.json
 
  ---
 
@@ -94,9 +94,9 @@
  ```powershell
  python -m venv .venv
  .\.venv\Scripts\Activate.ps1
- pip install -r Models/S.E.T.H/requirements.txt
+ pip install -r Models/ClusterWorldAI/requirements.txt
  curl http://localhost:11434/version
- cd Models/S.E.T.H
+ cd Models/ClusterWorldAI
  pytest -q
  python core/autonomous_loop.py --mode sandbox --interval 1 --cycles 1
  ```
@@ -105,7 +105,7 @@
 
  - OS version (Windows 10/11), Python version, and terminal used (PowerShell / CMD / WSL)
  - Exact command executed and the full error/stack trace
- - Relevant log files: Models/S.E.T.H/logs/daemon.log, Models/S.E.T.H/logs/errors.log, Models/S.E.T.H/logs/thoughts.txt
+ - Relevant log files: Models/ClusterWorldAI/logs/daemon.log, Models/ClusterWorldAI/logs/errors.log, Models/ClusterWorldAI/logs/thoughts.txt
 
  ---
 
@@ -144,29 +144,29 @@
 
  The "God View" is the operator's perspective for monitoring the agent. Primary entry points:
 
- - Monitor file: Models/S.E.T.H/data/monitor_state.json — snapshot of location, current activity, stats, uptime.
- - Thoughts log: Models/S.E.T.H/logs/thoughts.txt — sequential log of generated internal thoughts.
- - Actions log: Models/S.E.T.H/logs/actions.log — history of executed actions and commands.
- - Daemon/system logs: Models/S.E.T.H/logs/daemon.log — cycle traces, errors, and system events.
+ - Monitor file: Models/ClusterWorldAI/data/monitor_state.json — snapshot of location, current activity, stats, uptime.
+ - Thoughts log: Models/ClusterWorldAI/logs/thoughts.txt — sequential log of generated internal thoughts.
+ - Actions log: Models/ClusterWorldAI/logs/actions.log — history of executed actions and commands.
+ - Daemon/system logs: Models/ClusterWorldAI/logs/daemon.log — cycle traces, errors, and system events.
 
  How to inspect as an operator
 
- 1. Open Models/S.E.T.H/data/monitor_state.json for a quick JSON snapshot.
- 2. Tail Models/S.E.T.H/logs/thoughts.txt to read the agent's thought stream.
- 3. Inspect Models/S.E.T.H/logs/actions.log for executed actions.
+ 1. Open Models/ClusterWorldAI/data/monitor_state.json for a quick JSON snapshot.
+ 2. Tail Models/ClusterWorldAI/logs/thoughts.txt to read the agent's thought stream.
+ 3. Inspect Models/ClusterWorldAI/logs/actions.log for executed actions.
 
  ---
 
  ## Key Files & Module References 📚
 
- - [Main loop](Models/S.E.T.H/core/autonomous_loop.py#L1)
- - [Observer](Models/S.E.T.H/core/observer.py#L1)
- - [Thought generator / Ollama integration](Models/S.E.T.H/core/thought_generator.py#L1)
- - [Goal manager](Models/S.E.T.H/core/goal_manager.py#L1)
- - [Tools & ToolManager](Models/S.E.T.H/core/tools.py#L1)
- - [Sandbox manager](Models/S.E.T.H/core/sandbox.py#L1)
- - [Memory manager (SQLite)](Models/S.E.T.H/core/memory_manager.py#L1)
- - [Log manager](Models/S.E.T.H/core/log_manager.py#L1)
+ - [Main loop](Models/ClusterWorldAI/core/autonomous_loop.py#L1)
+ - [Observer](Models/ClusterWorldAI/core/observer.py#L1)
+ - [Thought generator / Ollama integration](Models/ClusterWorldAI/core/thought_generator.py#L1)
+ - [Goal manager](Models/ClusterWorldAI/core/goal_manager.py#L1)
+ - [Tools & ToolManager](Models/ClusterWorldAI/core/tools.py#L1)
+ - [Sandbox manager](Models/ClusterWorldAI/core/sandbox.py#L1)
+ - [Memory manager (SQLite)](Models/ClusterWorldAI/core/memory_manager.py#L1)
+ - [Log manager](Models/ClusterWorldAI/core/log_manager.py#L1)
 
  ---
 
